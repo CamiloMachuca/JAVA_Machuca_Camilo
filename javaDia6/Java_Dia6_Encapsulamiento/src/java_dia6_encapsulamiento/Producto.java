@@ -65,14 +65,13 @@ public class Producto {
     }
     public void actualizarStock(int cantidad2){
         if (cantidad>0){
-            this.cantidad=cantidad+cantidad2;  
+            this.cantidad+= cantidad2;  
         }
         else if(cantidad<0){
+            this.cantidad+=cantidad2;
             
             if (cantidad<0){
                 System.out.println("La cantidad no puede ser negativa");
-            }else {
-                this.cantidad=cantidad-cantidad2;
             }
         }else{
             System.out.println("cantidad invalidad");

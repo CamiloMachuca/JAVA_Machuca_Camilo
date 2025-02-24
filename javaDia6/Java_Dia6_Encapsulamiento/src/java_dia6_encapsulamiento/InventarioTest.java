@@ -16,13 +16,13 @@ public class InventarioTest {
         Producto pr= new Producto("abc1", "camisa", 20, 20000);
         
         // Actualizar stock
-        pr.actualizarStock(15);
+        pr.actualizarStock(-5);
         
         // ver productos a la venta;
         System.out.println(pr.VerProductos());
         
         //Ingrese la cantidad que desea del producto
-        int cantidadCompr= 10;
+        int cantidadCompr= 2;
         // Se actualiza el stock del producto
         pr.actualizarStock(cantidadCompr);
         // se muestra el estock actualizado
