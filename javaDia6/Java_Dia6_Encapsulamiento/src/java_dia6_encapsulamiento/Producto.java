@@ -69,8 +69,9 @@ public class Producto {
         }
         else if(cantidad<0){
             this.cantidad+=cantidad2;
-            
+ 
             if (cantidad<0){
+                this.cantidad-=cantidad2;
                 System.out.println("La cantidad no puede ser negativa");
             }
         }else{
