@@ -17,12 +17,14 @@ public class Carrera extends Thread {
             getClass().notifyAll();
         try{
             Thread.sleep((int) (Math.random()*2+9)*1000);
-            System.out.println("El atleta: "+ atleta+ " entrega el testigo en un tiempo de: "+ System.currentTimeMillis());
+            System.out.println("El atleta: "+ atleta+ " entrega el testigo en un tiempo de: "+ ((int) (Math.random()*2+9))+ " S");
             getClass().wait();
            
         }catch(InterruptedException e){
             getClass().notifyAll();
+            
         }
+        getClass().notifyAll();
         }
         
     }
