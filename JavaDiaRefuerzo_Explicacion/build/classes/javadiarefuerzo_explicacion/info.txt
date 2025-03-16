@@ -1,3 +1,1 @@
-P,1,"Pedro",14
-P,1,"Pedro",14
-PR,1,"Pedro",14.99
+PR,6,mango,400.0
