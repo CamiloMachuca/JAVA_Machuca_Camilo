@@ -74,4 +74,42 @@ public class UsuarioDAO {
         }
     }
     
+    //eliminar
+    public void eliminarUsuario(int id){
+        String sql="delete from usuarios where id=?";
+        
+        try(
+            Connection conexionInterna=conectar();
+            PreparedStatement solicitud= conexionInterna.prepareStatement(sql)){
+            solicitud.setInt(1, id);
+            
+            solicitud.executeUpdate();
+            System.out.println("Usuario eliminado con exito");
+           
+            
+        }catch(SQLException e){
+            System.out.println("error al eliminar el usuario");
+                e.printStackTrace();
+        }
+        
+    }
+    
+    // filtrar usuarios
+     public List<String> filtrarUsuario( String idd){
+        String sql= "select * from usuarios where id="+ idd;
+        List<String> listaUsuariosFiltro=new ArrayList<>();
+        try{
+            Connection conexionInterna=conectar();
+            PreparedStatement solicitud=  conexionInterna.prepareStatement(sql);
+            ResultSet resultado= solicitud.executeQuery();{
+            while (resultado.next()){
+                listaUsuariosFiltro.add(String.valueOf(resultado.getInt("id")+"-"+ resultado.getString("nombre")+ resultado.getString("email")));
+            }
+        }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return listaUsuariosFiltro;
+    }
+    
 }
