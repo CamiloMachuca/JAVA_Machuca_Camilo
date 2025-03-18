@@ -6,6 +6,7 @@ import java.util.List;
 public class main {
     public static void main(String[] args) {
         UsuarioDAO usuarioDao=new UsuarioDAO();
+        /*
         usuarioDao.insertUsuario("Pedrito", "Pedrogomez.campuslads@gmail.com");
         usuarioDao.insertUsuario("Valentina", "Valentina.campuslads@gmail.com");
         usuarioDao.insertUsuario("Zully", "Zully.campuslads@gmail.com");
@@ -14,7 +15,7 @@ public class main {
         for (String usuario: listaUsuarios){
             System.out.println(usuario);
         }
-        
+        System.out.println("=====================");
         usuarioDao.actualizarUsuario("Jaime", "jaimeBarrera@gmail.com", 3);
         listaUsuarios= usuarioDao.obtenerUsuario();
         System.out.println("####################");
@@ -22,9 +23,10 @@ public class main {
             System.out.println(usuario);
         }
         
-        usuarioDao.eliminarUsuario(1);
-        
-        List<String> listaUsuariosFiltro= usuarioDao.filtrarUsuario("3");
+        // usuarioDao.eliminarUsuario(3);
+        */
+        System.out.println("El usuario filtrado es:");
+        List<String> listaUsuariosFiltro= usuarioDao.filtrarUsuario(2);
         for (String usuario: listaUsuariosFiltro){
             System.out.println(usuario);
         }

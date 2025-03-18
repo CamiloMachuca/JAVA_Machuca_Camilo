@@ -95,7 +95,7 @@ public class UsuarioDAO {
     }
     
     // filtrar usuarios
-     public List<String> filtrarUsuario( String idd){
+     public List<String> filtrarUsuario( int idd){
         String sql= "select * from usuarios where id="+ idd;
         List<String> listaUsuariosFiltro=new ArrayList<>();
         try{
